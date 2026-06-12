@@ -255,7 +255,7 @@ svg.x-surface,
 }
 
 /* Allow column panel bodies to show overflowed form content */
-.x-window .x-panel-body {
+.x-window .x-panel-body:not(.x-scroller) {
     overflow: visible !important;
 }
 
@@ -1409,7 +1409,6 @@ div[id^="pveResourceTree"] .x-grid-cell {
     border: none !important;
     border-radius: var(--pm-radius-md) var(--pm-radius-md) 0 0 !important;
     padding: 8px 16px 8px !important;
-    position: relative !important;
     overflow: visible !important;
     margin-bottom: 0 !important;
     transition: color 0.15s ease !important;

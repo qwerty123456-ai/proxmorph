@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.3] - 2026-06-12
+
+### Fixed
+- **All themes** — Task Viewer window no longer loses its scrollbar. The blanket `.x-window .x-panel-body { overflow: visible !important }` rule was overriding ExtJS's own inline `overflow: auto` on scrollable panel bodies (`.x-scroller`). Fixed by scoping the rule to `:not(.x-scroller)`. Issue [#49](https://github.com/IT-BAER/proxmorph/issues/49)
+- **All themes** — CT and VM creation dialog tabs are no longer pushed off-screen. `position: relative !important` on `.x-tab` was overriding ExtJS box layout's absolute positioning, causing each tab's offset to double-count (natural flow position + intended left = tabs spreading ~1.5× wider than the container). Removed the offending declaration. Issue [#50](https://github.com/IT-BAER/proxmorph/issues/50)
+- **Catppuccin Latte** — Text on colored elements (progress bar fill, active buttons, badges) is now visible. `--ctp-on-accent` was set to `var(--ctp-base)` (`#eff1f5`, near-white), which is invisible on the light Latte background. Changed to `#ffffff` for proper contrast against vivid Latte accent fills (mauve, red, yellow). Issue [#51](https://github.com/IT-BAER/proxmorph/issues/51)
+
 ## [2.7.2] - 2026-04-16
 
 ### Fixed
